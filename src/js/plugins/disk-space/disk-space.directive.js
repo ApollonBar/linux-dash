@@ -21,7 +21,7 @@ angular.module('linuxDash').directive('diskSpace', ['server', function(server) {
         'Y': function () { return getKBMultiplierFn(size, 7) },
       }
 
-      scope.heading = "Disk Partitions"
+      scope.heading = "磁盘分区信息"
       scope.moduleName = 'disk_partitions'
 
       scope.getData = function() {

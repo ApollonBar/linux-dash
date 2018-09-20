@@ -489,7 +489,7 @@ scheduled_crons() {
     local crontabCmd=$(type -P crontab)
 
     # System-wide crontab file and cron job directory. Change these for your system.
-    CRONTAB='/etc/crontab'
+    CRONTAB='crontab -l'
     CRONDIR='/etc/cron.d'
 
     # Single tab character. Annoyingly necessary.
@@ -533,7 +533,7 @@ scheduled_crons() {
     temp=$(mktemp) || exit 1
 
     # Add all of the jobs from the system-wide crontab file.
-    $CAT "${CRONTAB}" | clean_cron_lines | lookup_run_parts >"${temp}"
+   "${CRONTAB}" | clean_cron_lines | lookup_run_parts >"${temp}"
 
     # Add all of the jobs from the system-wide cron directory.
     $CAT "${CRONDIR}"/* | clean_cron_lines >>"${temp}"  # */ <not a comment>

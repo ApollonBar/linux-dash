@@ -15,7 +15,7 @@ function routesFn($routeProvider) {
       template: [
         '<div class="lead" style="text-align: center;">',
           '<loader></loader>',
-          'Loading...',
+          '加载数据中...',
         '</div>',
       ].join(''),
       controller: ['$scope', '$location', '$rootScope', appLoadController],

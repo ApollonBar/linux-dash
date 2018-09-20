@@ -10,10 +10,10 @@ angular.module('linuxDash').directive('navBar', ['$location', function($location
         </li> \
       </ul> \
       <span class="right-content">\
-        Resources:\
+        相关资源:\
         <a target="_blank" href="https://github.com/afaqurk/linux-dash">GitHub</a> | \
-        <a target="_blank" href="https://gitter.im/afaqurk/linux-dash">Gitter Chat Room</a> | \
-        <a target="_blank" href="https://github.com/afaqurk/linux-dash/wiki">Docs</a> \
+        <a target="_blank" href="https://gitter.im/afaqurk/linux-dash">Gitter聊天室</a> | \
+        <a target="_blank" href="https://github.com/afaqurk/linux-dash/wiki">文档</a> \
       </span>\
     ',
     link: function(scope) {
@@ -26,6 +26,21 @@ angular.module('linuxDash').directive('navBar', ['$location', function($location
       ]
 
       scope.getNavItemName = function(url) {
+        if(url=='system-status'){
+          return '系统状态' 
+        }
+        if(url=='basic-info'){
+          return  '基本信息' 
+        }
+        if(url=='network'){
+          return  '网络' 
+        }
+        if(url=='accounts'){
+          return  '用户' 
+        }
+        if(url=='apps'){
+          return '程序' 
+        }
         return url.replace('-', ' ')
       }
 

@@ -5,7 +5,7 @@ angular.module('linuxDash').directive('cpuUtilizationChart', ['server', function
     template: ' \
       <line-chart-plugin \
  \
-          heading="CPU Utilization" \
+          heading="CPU利用率" \
           module-name="cpu_utilization" \
           color="0,255,0" \
  \
@@ -26,7 +26,7 @@ angular.module('linuxDash').directive('cpuUtilizationChart', ['server', function
       }
 
       scope.utilMetrics = [{
-        name: 'Usage',
+        name: '利用率：',
         generate: function(serverResponseData) {
           return serverResponseData + ' %'
         }

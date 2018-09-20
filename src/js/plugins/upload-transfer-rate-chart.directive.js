@@ -4,7 +4,7 @@ angular.module('linuxDash').directive('uploadTransferRateChart', ['server', func
     scope: {},
     template: ' \
       <multi-line-chart-plugin \
-          heading="Upload Transfer Rate" \
+          heading="上传传输速度" \
           module-name="upload_transfer_rate" \
           units="units"> \
       </multi-line-chart-plugin> \

@@ -5,7 +5,7 @@ angular.module('linuxDash').directive('ramChart', ['server', function (server) {
     template: '\
       <line-chart-plugin \
 \
-          heading="RAM Usage" \
+          heading="内存" \
           module-name="current_ram" \
           color="0,255,0" \
 \
@@ -48,7 +48,7 @@ angular.module('linuxDash').directive('ramChart', ['server', function (server) {
       }
 
       scope.ramMetrics = [{
-        name: 'Used',
+        name: '占用',
         generate: function(serverResponseData) {
           var ratio = serverResponseData.used / serverResponseData.total
           var percentage = parseInt(ratio * 100)
@@ -58,12 +58,12 @@ angular.module('linuxDash').directive('ramChart', ['server', function (server) {
         }
       },
       {
-        name: 'Available',
+        name: '可用',
         generate: function(serverResponseData) {
 
           var availableRam = humanizeRam(serverResponseData.available)
           var totalRam = humanizeRam(serverResponseData.total)
-          return  availableRam + ' of ' + totalRam
+          return  availableRam + ' / ' + totalRam
         }
       }]
     }
