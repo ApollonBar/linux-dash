@@ -533,7 +533,7 @@ scheduled_crons() {
     temp=$(mktemp) || exit 1
 
     # Add all of the jobs from the system-wide crontab file.
-   "${CRONTAB}" | clean_cron_lines | lookup_run_parts >"${temp}"
+    $CAT "${CRONTAB}" | clean_cron_lines | lookup_run_parts >"${temp}"
 
     # Add all of the jobs from the system-wide cron directory.
     $CAT "${CRONDIR}"/* | clean_cron_lines >>"${temp}"  # */ <not a comment>
